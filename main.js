@@ -45,7 +45,7 @@ var repo_site = "https://imaru.github.io/jqTemplate/";
  var fixation = {
    type: 'html-keyboard-response',
    stimulus: '<div style="font-size:60px;">+</div>',
-   choices: jsPsych.NO_KEYS,
+   choices: "NO_KEYS",
    trial_duration: function(){
      return jsPsych.randomization.sampleWithoutReplacement([250, 500, 750, 1000, 1250, 1500, 1750, 2000], 1)[0];
    },
