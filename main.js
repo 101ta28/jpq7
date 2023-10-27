@@ -7,7 +7,10 @@ let timeline = [];
 let preload = {
   // type: 'preload',
   type: jsPsychPreload,
-  images: [repo_site + 'img/blue.png', repo_site + 'img/orange.png']
+  images: [repo_site + 'img/blue.png', repo_site + 'img/orange.png'],
+  on_finish: function () {
+    console.log('preload finished');
+  }
 }
 timeline.push(preload);
 
@@ -18,6 +21,9 @@ let welcome = {
   // stimulus: function () {
   //   return "<p>Welcome to the experiment. Press any key to begin.</p>";
   // },
+  on_finish: function () {
+    console.log('preload finished');
+  }
 };
 
 timeline.push(welcome);
