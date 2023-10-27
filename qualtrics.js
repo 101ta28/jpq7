@@ -36,7 +36,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
 
     function initExp() {
         const experiment = initJsPsych({
-            timeline: timeline,
+            // timeline: timeline,
             display_element: 'display_stage',
             on_finish: function () {
                 var datajs = jsPsych.data.get().json();
@@ -46,7 +46,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
                 qthis.clickNextButton();
             }
         });
-        experiment.run();
+        experiment.run(timeline);
     };
 });
 

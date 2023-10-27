@@ -5,7 +5,8 @@ var timeline = [];
 
 /* preload images */
 var preload = {
-  type: 'preload',
+  // type: 'preload',
+  type: jsPsychPreload,
   images: [repo_site + 'img/blue.png', repo_site + 'img/orange.png']
 }
 timeline.push(preload);
