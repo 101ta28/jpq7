@@ -44,7 +44,10 @@ var test_stimuli = [
 
 var fixation = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: '<div style="font-size:60px;">+</div>',
+  // stimulus: '<div style="font-size:60px;">+</div>',
+  stimulus: function () {
+    return '<div style="font-size:60px;">+</div>';
+  },
   choices: "NO_KEYS",
   trial_duration: function () {
     return jsPsych.randomization.sampleWithoutReplacement([250, 500, 750, 1000, 1250, 1500, 1750, 2000], 1)[0];
@@ -56,7 +59,10 @@ var fixation = {
 
 var test = {
   type: jsPsychImageKeyboardResponse,
-  stimulus: jsPsych.timelineVariable('stimulus', true),
+  // stimulus: jsPsych.timelineVariable('stimulus', true),
+  stimulus: function () {
+    return jsPsych.timelineVariable('stimulus', true);
+  },
   choices: ['f', 'j'],
   data: {
     task: 'response',
