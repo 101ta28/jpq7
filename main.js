@@ -1,10 +1,10 @@
-var repo_site = "https://imaru.github.io/jqTemplate/";
+let repo_site = "https://imaru.github.io/jqTemplate/";
 
 /* create timeline */
-var timeline = [];
+let timeline = [];
 
 /* preload images */
-var preload = {
+let preload = {
   // type: 'preload',
   type: jsPsychPreload,
   images: [repo_site + 'img/blue.png', repo_site + 'img/orange.png']
@@ -12,7 +12,7 @@ var preload = {
 timeline.push(preload);
 
 /* define welcome message trial */
-var welcome = {
+let welcome = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: "Welcome to the experiment. Press any key to begin.",
   // stimulus: function () {
@@ -23,7 +23,7 @@ var welcome = {
 timeline.push(welcome);
 
 /* define instructions trial */
-var instructions = {
+let instructions = {
   type: jsPsychHtmlKeyboardResponse,
   // stimulus: "<p>In this experiment, a circle will appear in the center " +
   //   " of the screen.</p><p>If the circle is <strong>blue</strong>, " +
@@ -45,7 +45,7 @@ var instructions = {
 timeline.push(instructions);
 
 /* test trials */
-var test_stimuli = [
+let test_stimuli = [
   // { stimulus: repo_site + "img/blue.png", correct_response: 'f' },
   {
     stimulus: function () {
@@ -62,7 +62,7 @@ var test_stimuli = [
   }
 ];
 
-var fixation = {
+let fixation = {
   type: jsPsychHtmlKeyboardResponse,
   // stimulus: '<div style="font-size:60px;">+</div>',
   stimulus: function () {
@@ -77,18 +77,18 @@ var fixation = {
   }
 }
 
-var test = {
+let test = {
   type: jsPsychImageKeyboardResponse,
-  // stimulus: jsPsych.timelineVariable('stimulus', true),
+  // stimulus: jsPsych.timelineletiable('stimulus', true),
   stimulus: function () {
-    return jsPsych.timelineVariable('stimulus');
+    return jsPsych.timelineletiable('stimulus');
   },
   choices: ['f', 'j'],
   data: {
     task: 'response',
-    // correct_response: jsPsych.timelineVariable('correct_response')
+    // correct_response: jsPsych.timelineletiable('correct_response')
     correct_response: function () {
-      return jsPsych.timelineVariable('correct_response');
+      return jsPsych.timelineletiable('correct_response');
     }
   },
   on_finish: function (data) {
@@ -96,9 +96,9 @@ var test = {
   }
 }
 
-var test_procedure = {
+let test_procedure = {
   timeline: [fixation, test],
-  timeline_variables: test_stimuli,
+  timeline_letiables: test_stimuli,
   repetitions: 5,
   randomize_order: true
 }
@@ -106,14 +106,14 @@ timeline.push(test_procedure);
 
 /* define debrief */
 
-var debrief_block = {
+let debrief_block = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function () {
     return new Promise((resolve) => {
-      var trials = jsPsych.data.get().filter({ task: 'response' });
-      var correct_trials = trials.filter({ correct: true });
-      var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
-      var rt = Math.round(correct_trials.select('rt').mean());
+      let trials = jsPsych.data.get().filter({ task: 'response' });
+      let correct_trials = trials.filter({ correct: true });
+      let accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+      let rt = Math.round(correct_trials.select('rt').mean());
 
       resolve(`<p>You responded correctly on ${accuracy}% of the trials.</p>
         <p>Your average response time was ${rt}ms.</p>

@@ -1,12 +1,12 @@
 Qualtrics.SurveyEngine.addOnload(function () {
     /* ページが完全に表示されたときに実行するJavaScriptをここに配置 */
-    var qthis = this;
+    let qthis = this;
     qthis.hideNextButton();
 
-    var task_github = "https://101ta28.github.io/jpq7/";
+    let task_github = "https://101ta28.github.io/jpq7/";
     // https://<GitHubのユーザー名>.github.io/<レポジトリ名>/
 
-    var requiredResources = [
+    let requiredResources = [
         task_github + "jspsych-7.3.3/dist/jspsych.js",
         task_github + "jspsych-7.3.3/dist/plugin-html-keyboard-response.js",
         task_github + "jspsych-7.3.3/dist/plugin-image-keyboard-response.js",
@@ -20,9 +20,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
             if ((idx + 1) < requiredResources.length) {
                 loadScript(idx + 1);
             } else {
-                console.log("All resources for the task loaded.");
                 initExp();
-                console.log("Experiment initialized.");
             }
         });
     }
@@ -35,18 +33,28 @@ Qualtrics.SurveyEngine.addOnload(function () {
     jQuery("<div id='display_stage'></div>").appendTo('body');
 
     function initExp() {
-        const experiment = initJsPsych({
-            // timeline: timeline,
-            display_element: 'display_stage',
-            on_finish: function () {
-                var datajs = jsPsych.data.get().json();
+        const jsPsych = initJsPsych();
+        jsPsych.run(
+            () => {
+                const datajs = jsPsych.data.get().json();
                 Qualtrics.SurveyEngine.setEmbeddedData("datajs", datajs);
                 jQuery('#display_stage').remove();
                 jQuery('#display_stage_background').remove();
                 qthis.clickNextButton();
             }
-        });
-        experiment.run(timeline);
+        )
+        // const experiment = initJsPsych({
+        //     // timeline: timeline,
+        //     display_element: 'display_stage',
+        //     on_finish: function () {
+        //         let datajs = jsPsych.data.get().json();
+        //         Qualtrics.SurveyEngine.setEmbeddedData("datajs", datajs);
+        //         jQuery('#display_stage').remove();
+        //         jQuery('#display_stage_background').remove();
+        //         qthis.clickNextButton();
+        //     }
+        // });
+        // experiment.run(timeline);
     };
 });
 
