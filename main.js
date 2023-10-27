@@ -12,14 +12,14 @@ timeline.push(preload);
 
 /* define welcome message trial */
 var welcome = {
-  type: "html-keyboard-response",
+  type: jsPsychHtmlKeyboardResponse,
   stimulus: "Welcome to the experiment. Press any key to begin."
 };
 timeline.push(welcome);
 
 /* define instructions trial */
 var instructions = {
-  type: "html-keyboard-response",
+  type: jsPsychHtmlKeyboardResponse,
   stimulus: "<p>In this experiment, a circle will appear in the center " +
     " of the screen.</p><p>If the circle is <strong>blue</strong>, " +
     " press the letter F on the keyboard as fast as you can.</p> " +
@@ -43,7 +43,7 @@ var test_stimuli = [
 ];
 
 var fixation = {
-  type: 'html-keyboard-response',
+  type: jsPsychHtmlKeyboardResponse,
   stimulus: '<div style="font-size:60px;">+</div>',
   choices: "NO_KEYS",
   trial_duration: function () {
@@ -55,7 +55,7 @@ var fixation = {
 }
 
 var test = {
-  type: "image-keyboard-response",
+  type: jsPsychImageKeyboardResponse,
   stimulus: jsPsych.timelineVariable('stimulus', true),
   choices: ['f', 'j'],
   data: {
@@ -78,7 +78,7 @@ timeline.push(test_procedure);
 /* define debrief */
 
 var debrief_block = {
-  type: "html-keyboard-response",
+  type: jsPsychHtmlKeyboardResponse,
   stimulus: function () {
 
     var trials = jsPsych.data.get().filter({ task: 'response' });
