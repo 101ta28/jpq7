@@ -32,7 +32,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
     jQuery("<div id = 'display_stage_background'></div>").appendTo('body');
     jQuery("<div id = 'display_stage'></div>").appendTo('body');
     function initExp() {
-        jsPsych.init({
+        initJsPsych({
             timeline: timeline,
             display_element: 'display_stage',
             on_finish: function (data) {
