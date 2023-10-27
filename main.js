@@ -18,10 +18,7 @@ var welcome = {
   stimulus: function () {
     return "<p>Welcome to the experiment. Press any key to begin.</p>";
   },
-  choices: "ALL_KEYS",
-  on_finish: function (data) {
-    console.log("welcome");
-  }
+  trials: true
 };
 
 timeline.push(welcome);
