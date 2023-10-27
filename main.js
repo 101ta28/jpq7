@@ -61,12 +61,12 @@ var test = {
   type: jsPsychImageKeyboardResponse,
   // stimulus: jsPsych.timelineVariable('stimulus', true),
   stimulus: function () {
-    return jsPsych.timelineVariable('stimulus', true);
+    return jsPsych.timelineVariable('stimulus');
   },
   choices: ['f', 'j'],
   data: {
     task: 'response',
-    correct_response: jsPsych.timelineVariable('correct_response', true)
+    correct_response: jsPsych.timelineVariable('correct_response')
   },
   on_finish: function (data) {
     data.correct = jsPsych.pluginAPI.compareKeys(data.response, data.correct_response);
