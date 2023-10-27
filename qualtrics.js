@@ -1,5 +1,5 @@
 Qualtrics.SurveyEngine.addOnload(function () {
-    /*Place your JavaScript here to run when the page is fully displayed*/
+    /* ページが完全に表示されたときに実行するJavaScriptをここに配置 */
     var qthis = this;
     qthis.hideNextButton();
 
@@ -29,21 +29,18 @@ Qualtrics.SurveyEngine.addOnload(function () {
         loadScript(0);
     }
 
-    jQuery("<div id = 'display_stage_background'></div>").appendTo('body');
-    jQuery("<div id = 'display_stage'></div>").appendTo('body');
+    jQuery("<div id='display_stage_background'></div>").appendTo('body');
+    jQuery("<div id='display_stage'></div>").appendTo('body');
+
     function initExp() {
         initJsPsych({
             timeline: timeline,
             display_element: 'display_stage',
-            on_finish: function (data) {
-
+            on_finish: function () {
                 var datajs = jsPsych.data.get().json();
-
                 Qualtrics.SurveyEngine.setEmbeddedData("datajs", datajs);
-
-                jQuery('display_stage').remove();
-                jQuery('display_stage_background').remove();
-
+                jQuery('#display_stage').remove();
+                jQuery('#display_stage_background').remove();
                 qthis.clickNextButton();
             }
         });
@@ -51,11 +48,9 @@ Qualtrics.SurveyEngine.addOnload(function () {
 });
 
 Qualtrics.SurveyEngine.addOnReady(function () {
-    /*Place your JavaScript here to run when the page is fully displayed*/
-
+    /* ページが完全に表示されたときに実行するJavaScriptをここに配置 */
 });
 
 Qualtrics.SurveyEngine.addOnUnload(function () {
-    /*Place your JavaScript here to run when the page is unloaded*/
-
+    /* ページがアンロードされるときに実行するJavaScriptをここに配置 */
 });
