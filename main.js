@@ -14,11 +14,10 @@ timeline.push(preload);
 /* define welcome message trial */
 var welcome = {
   type: jsPsychHtmlKeyboardResponse,
-  // stimulus: "Welcome to the experiment. Press any key to begin.",
-  stimulus: function () {
-    return "<p>Welcome to the experiment. Press any key to begin.</p>";
-  },
-  trials: true
+  stimulus: "Welcome to the experiment. Press any key to begin.",
+  // stimulus: function () {
+  //   return "<p>Welcome to the experiment. Press any key to begin.</p>";
+  // },
 };
 
 timeline.push(welcome);
