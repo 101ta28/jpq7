@@ -131,7 +131,7 @@ let timeline = [];
 // timeline.push(debrief_block);
 
 let external_page = {
-  type: 'external-html',
+  type: jsPsychExternalHtml,
   url: "https://101ta28.github.io/jpq7/experiment.html",
   cont_key: 'ALL_KEYS',
   check_fn: function () {
