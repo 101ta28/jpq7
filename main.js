@@ -19,7 +19,11 @@ var welcome = {
     return "<p>Welcome to the experiment. Press any key to begin.</p>";
   },
   choices: "ALL_KEYS",
+  on_finish: function (data) {
+    console.log("welcome");
+  }
 };
+
 timeline.push(welcome);
 
 /* define instructions trial */
