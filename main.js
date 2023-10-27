@@ -66,7 +66,10 @@ var test = {
   choices: ['f', 'j'],
   data: {
     task: 'response',
-    correct_response: jsPsych.timelineVariable('correct_response')
+    // correct_response: jsPsych.timelineVariable('correct_response')
+    correct_response: function () {
+      return jsPsych.timelineVariable('correct_response');
+    }
   },
   on_finish: function (data) {
     data.correct = jsPsych.pluginAPI.compareKeys(data.response, data.correct_response);
