@@ -12,6 +12,7 @@ var preload = {
 timeline.push(preload);
 
 /* define welcome message trial */
+const jsPsychHtmlKeyboardResponse = require('jspsych-html-keyboard-response');
 var welcome = {
   type: jsPsychHtmlKeyboardResponse,
   // stimulus: "Welcome to the experiment. Press any key to begin.",
