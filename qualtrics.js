@@ -7,7 +7,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
     // https://<GitHubのユーザー名>.github.io/<レポジトリ名>/
 
     var requiredResources = [
-        task_github + "jspsych-7.3.3/jspsych.js",
+        task_github + "jspsych-7.3.3/dist/jspsych.js",
         task_github + "jspsych-7.3.3/dist/plugin-html-keyboard-response.js",
         task_github + "jspsych-7.3.3/dist/plugin-html-keyboard-response.js",
         task_github + "jspsych-7.3.3/dist/plugin-preload.js",
