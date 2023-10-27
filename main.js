@@ -17,7 +17,8 @@ var welcome = {
   // stimulus: "Welcome to the experiment. Press any key to begin."
   stimulus: function () {
     return "Welcome to the experiment. Press any key to begin.";
-  }
+  },
+  post_trial_gap: 1000
 };
 timeline.push(welcome);
 
