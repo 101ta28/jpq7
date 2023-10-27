@@ -3,6 +3,9 @@ let repo_site = "https://imaru.github.io/jqTemplate/";
 /* create timeline */
 let timeline = [];
 
+console.log('main.js');
+console.log(jsPsychHtmlKeyboardResponse);
+
 // /* preload images */
 let preload = {
   // type: 'preload',
