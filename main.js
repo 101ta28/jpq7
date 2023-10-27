@@ -117,16 +117,15 @@ timeline.push(test_procedure);
 let debrief_block = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function () {
-    return new Promise((resolve) => {
-      let trials = jsPsych.data.get().filter({ task: 'response' });
-      let correct_trials = trials.filter({ correct: true });
-      let accuracy = Math.round(correct_trials.count() / trials.count() * 100);
-      let rt = Math.round(correct_trials.select('rt').mean());
+    let trials = jsPsych.data.get().filter({ task: 'response' });
+    let correct_trials = trials.filter({ correct: true });
+    let accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+    let rt = Math.round(correct_trials.select('rt').mean());
 
-      resolve(`<p>You responded correctly on ${accuracy}% of the trials.</p>
-        <p>Your average response time was ${rt}ms.</p>
-        <p>Press any key to complete the experiment. Thank you!</p>`);
-    });
+    return `<p>You responded correctly on ${accuracy}% of the trials.</p>
+            <p>Your average response time was ${rt}ms.</p>
+            <p>Press any key to complete the experiment. Thank you!</p>`;
   }
 };
+
 timeline.push(debrief_block);
