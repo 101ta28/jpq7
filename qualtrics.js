@@ -9,7 +9,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
     var requiredResources = [
         task_github + "jspsych-7.3.3/dist/jspsych.js",
         task_github + "jspsych-7.3.3/dist/plugin-html-keyboard-response.js",
-        task_github + "jspsych-7.3.3/dist/plugin-html-keyboard-response.js",
+        task_github + "jspsych-7.3.3/dist/plugin-image-keyboard-response.js",
         task_github + "jspsych-7.3.3/dist/plugin-preload.js",
         task_github + "main.js"
     ];
