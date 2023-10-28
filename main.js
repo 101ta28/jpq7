@@ -1,17 +1,22 @@
 const repo_site = "https://imaru.github.io/jqTemplate/";
 
 let timeline = [];
+
 let preload = {
   type: jsPsychPreload,
   images: [`${repo_site}img/blue.png`, `${repo_site}img/orange.png`],
 };
 timeline.push(preload);
 
+console.log("preload ok");
+
 let welcome = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: "Welcome to the experiment. Press any key to begin.",
 };
 timeline.push(welcome);
+
+console.log("welcome ok");
 
 // let instructions = {
 //   type: jsPsychHtmlKeyboardResponse,
