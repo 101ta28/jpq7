@@ -42,7 +42,10 @@ let instructions = {
   //     "<div style='float: right;'><img src=" + repo_site + "/img/orange.png></img> " +
   //     "<p class='small'><strong>Press the J key</strong></p></div>";
   // },
-  post_trial_gap: 2000
+  post_trial_gap: 2000,
+  on_finish: function (data) {
+    console.log(data.key_press);
+  }
 };
 timeline.push(instructions);
 
