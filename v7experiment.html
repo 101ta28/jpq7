@@ -137,11 +137,7 @@
     timeline.push(debrief_block);
 
     /* start the experiment */
-    initJsPsych({
-      timeline: timeline,
-      on_finish: function () {
-        jsPsych.data.displayData();
-      },
-    });
+    const jsPsych = initJsPsych();
+    jsPsych.run(timeline);
   </script>
 </html>
