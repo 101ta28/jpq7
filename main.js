@@ -1,4 +1,4 @@
-let repo_site = "https://imaru.github.io/jqTemplate/";
+const repo_site = "https://imaru.github.io/jqTemplate/";
 
 /* create timeline */
 let timeline = [];
