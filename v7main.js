@@ -1,27 +1,31 @@
 const repo_site = "https://101ta28.github.io/jpq7/";
 
+
 /* create timeline */
-var timeline = [];
+let timeline = [];
 
 /* preload images */
-var preload = {
+let preload = {
     type: jsPsychPreload,
-    images: [
-        `${repo_site}jspsych-6.3.1/examples/img/blue.png`,
-        `${repo_site}jspsych-6.3.1/examples/img/orange.png`
-    ],
+    images: [`${repo_site}jspsych-6.3.1/examples/img/blue.png`, `${repo_site}jspsych-6.3.1/examples/img/orange.png`],
 };
 timeline.push(preload);
 
+let enter_fullscreen = {
+    type: jsPsychFullscreen,
+    fullscreen_mode: true
+}
+timeline.push(enter_fullscreen);
+
 /* define welcome message trial */
-var welcome = {
+let welcome = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: "Welcome to the experiment. Press any key to begin.",
 };
 timeline.push(welcome);
 
 /* define instructions trial */
-var instructions = {
+let instructions = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
         <p>In this experiment, a circle will appear in the center 
@@ -42,7 +46,7 @@ var instructions = {
 timeline.push(instructions);
 
 /* test trials */
-var test_stimuli = [
+let test_stimuli = [
     {
         stimulus: "jspsych-6.3.1/examples/img/blue.png",
         correct_response: "f",
@@ -53,7 +57,7 @@ var test_stimuli = [
     },
 ];
 
-var fixation = {
+let fixation = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: '<div style="font-size:60px;">+</div>',
     choices: "NO_KEYS",
@@ -68,7 +72,7 @@ var fixation = {
     },
 };
 
-var test = {
+let test = {
     type: jsPsychImageKeyboardResponse,
     // stimulus: jsPsych.timelineVariable("stimulus", true),
     stimulus: function () {
@@ -90,7 +94,7 @@ var test = {
     },
 };
 
-var test_procedure = {
+let test_procedure = {
     timeline: [fixation, test],
     timeline_variables: test_stimuli,
     repetitions: 5,
@@ -100,15 +104,15 @@ timeline.push(test_procedure);
 
 /* define debrief */
 
-var debrief_block = {
+let debrief_block = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: function () {
-        var trials = jsPsych.data.get().filter({ task: "response" });
-        var correct_trials = trials.filter({ correct: true });
-        var accuracy = Math.round(
+        let trials = jsPsych.data.get().filter({ task: "response" });
+        let correct_trials = trials.filter({ correct: true });
+        let accuracy = Math.round(
             (correct_trials.count() / trials.count()) * 100
         );
-        var rt = Math.round(correct_trials.select("rt").mean());
+        let rt = Math.round(correct_trials.select("rt").mean());
 
         return `<p>You responded correctly on ${accuracy}% of the trials.</p>
           <p>Your average response time was ${rt}ms.</p>
@@ -116,3 +120,9 @@ var debrief_block = {
     },
 };
 timeline.push(debrief_block);
+
+let exit_fullscreen = {
+    type: jsPsychFullscreen,
+    fullscreen_mode: false
+}
+timeline.push(exit_fullscreen);
