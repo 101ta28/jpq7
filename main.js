@@ -43,27 +43,25 @@ let instructions = {
   //     "<p class='small'><strong>Press the J key</strong></p></div>";
   // },
   post_trial_gap: 2000,
-  on_finish: function (data) {
-    console.log(data.key_press);
-  }
 };
 timeline.push(instructions);
 
 /* test trials */
 let test_stimuli = [
-  // { stimulus: repo_site + "img/blue.png", correct_response: 'f' },
-  {
-    stimulus: function () {
-      return repo_site + "/img/blue.png";
-    },
-    correct_response: 'f'
-  },
-  {
-    stimulus: function () {
-      return repo_site + "/img/orange.png";
-    },
-    correct_response: 'j'
-  }
+  { stimulus: repo_site + "img/blue.png", correct_response: 'f' },
+  // {
+  //   stimulus: function () {
+  //     return repo_site + "/img/blue.png";
+  //   },
+  //   correct_response: 'f'
+  // },
+  { stimulus: repo_site + "img/orange.png", correct_response: 'j' },
+  // {
+  //   stimulus: function () {
+  //     return repo_site + "/img/orange.png";
+  //   },
+  //   correct_response: 'j'
+  // }
 ];
 
 let fixation = {
