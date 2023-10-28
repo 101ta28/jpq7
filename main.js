@@ -19,7 +19,7 @@ let welcome = {
   //   return "<p>Welcome to the experiment. Press any key to begin.</p>";
   // },
 };
-timeline.push(welcome);
+// timeline.push(welcome);
 
 /* define instructions trial */
 let instructions = {
