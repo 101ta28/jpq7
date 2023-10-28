@@ -7,7 +7,7 @@ var timeline = [];
 var preload = {
     type: jsPsychPreload,
     images: [
-        `${repo_site}jspsych-6.3.1/examples/img/blue.png`
+        `${repo_site}jspsych-6.3.1/examples/img/blue.png`,
         `${repo_site}jspsych-6.3.1/examples/img/orange.png`
     ],
 };
