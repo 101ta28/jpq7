@@ -43,6 +43,10 @@ let instructions = {
   //     "<p class='small'><strong>Press the J key</strong></p></div>";
   // },
   post_trial_gap: 2000,
+  // キー入力があったらconsole.logに出力する
+  on_finish: function (data) {
+    console.log(data);
+  }
 };
 timeline.push(instructions);
 
