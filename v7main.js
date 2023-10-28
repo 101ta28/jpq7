@@ -1,3 +1,5 @@
+const repo_site = "https://101ta28.github.io/jpq7/";
+
 /* create timeline */
 var timeline = [];
 
@@ -5,8 +7,8 @@ var timeline = [];
 var preload = {
     type: jsPsychPreload,
     images: [
-        "jspsych-6.3.1/examples/img/blue.png",
-        "jspsych-6.3.1/examples/img/orange.png",
+        `${repo_site}jspsych-6.3.1/examples/img/blue.png`
+        `${repo_site}jspsych-6.3.1/examples/img/orange.png`
     ],
 };
 timeline.push(preload);
