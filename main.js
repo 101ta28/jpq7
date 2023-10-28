@@ -19,7 +19,7 @@ let welcome = {
   //   return "<p>Welcome to the experiment. Press any key to begin.</p>";
   // },
 };
-// timeline.push(welcome);
+timeline.push(welcome);
 
 /* define instructions trial */
 let instructions = {
@@ -43,10 +43,6 @@ let instructions = {
   //     "<p class='small'><strong>Press the J key</strong></p></div>";
   // },
   post_trial_gap: 2000,
-  // キー入力があったらconsole.logに出力する
-  on_finish: function (data) {
-    console.log(data);
-  }
 };
 timeline.push(instructions);
 
