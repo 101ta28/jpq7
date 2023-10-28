@@ -11,7 +11,7 @@ let welcome = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: "Welcome to the experiment. Press any key to begin.",
 };
-timeline.push(welcome);
+// timeline.push(welcome);
 
 let instructions = {
   type: jsPsychHtmlKeyboardResponse,
