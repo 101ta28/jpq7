@@ -1,11 +1,5 @@
 const repo_site = "https://101ta28.github.io/jpq7/";
 
-function handleKeyPress(key) {
-    // キー入力を処理する
-    console.log('Key pressed:', key);
-}
-
-
 /* create timeline */
 let timeline = [];
 
@@ -18,15 +12,8 @@ timeline.push(preload);
 
 /* define welcome message trial */
 let welcome = {
-    type: jsPsychHtmlKeyboardResponse,
+    type: 'html-keyboard-response',
     stimulus: "Welcome to the experiment. Press any key to begin.",
-    on_finish: function (data) {
-        console.log(data);  // Add this line to log the data
-        data.correct = jsPsych.pluginAPI.compareKeys(
-            data.response,
-            data.correct_response
-        );
-    },
 };
 timeline.push(welcome);
 
