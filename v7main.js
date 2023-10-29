@@ -1,5 +1,10 @@
 const repo_site = "https://101ta28.github.io/jpq7/";
 
+function handleKeyPress(key) {
+    // キー入力を処理する
+    console.log('Key pressed:', key);
+}
+
 
 /* create timeline */
 let timeline = [];
