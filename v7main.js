@@ -11,12 +11,6 @@ let preload = {
 };
 timeline.push(preload);
 
-let enter_fullscreen = {
-    type: jsPsychFullscreen,
-    fullscreen_mode: true
-}
-timeline.push(enter_fullscreen);
-
 /* define welcome message trial */
 let welcome = {
     type: jsPsychHtmlKeyboardResponse,
@@ -120,9 +114,3 @@ let debrief_block = {
     },
 };
 timeline.push(debrief_block);
-
-let exit_fullscreen = {
-    type: jsPsychFullscreen,
-    fullscreen_mode: false
-}
-timeline.push(exit_fullscreen);
