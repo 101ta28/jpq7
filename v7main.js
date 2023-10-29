@@ -15,6 +15,13 @@ timeline.push(preload);
 let welcome = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: "Welcome to the experiment. Press any key to begin.",
+    on_finish: function (data) {
+        console.log(data);  // Add this line to log the data
+        data.correct = jsPsych.pluginAPI.compareKeys(
+            data.response,
+            data.correct_response
+        );
+    },
 };
 timeline.push(welcome);
 
