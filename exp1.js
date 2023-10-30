@@ -7,7 +7,7 @@ const hello_trial = {
     type: 'html-keyboard-response',
     stimulus: function () {
         const html =
-            `<img id="rotate-image" src="jspsych-6.3.1/examples/img/9.gif" style="transition: transform 2s;">`;
+            `<img id="rotate-image" src="${repo_site}jspsych-6.3.1/examples/img/9.gif" style="transition: transform 2s;">`;
         setTimeout(() => {
             document.getElementById("rotate-image").style.transform =
                 "rotate(360deg)";

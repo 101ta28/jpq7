@@ -6,7 +6,7 @@ let timeline = [];
 const hello_trial = {
     type: 'html-keyboard-response',
     stimulus: function () {
-        const html = '<img id="rotate-image" src="${repo_site}jspsych-6.3.1/examples/img/9.gif">';
+        const html = `<img id="rotate-image" src="${repo_site}jspsych-6.3.1/examples/img/9.gif">`;
         return html;
     },
     on_load: function () {
