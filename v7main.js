@@ -1,8 +1,5 @@
 const repo_site = "https://101ta28.github.io/jpq7/";
 
-// Qualtricsの埋め込みデータを取得できるようにする
-console.log(window.myEmbeddedData);
-
 /* create timeline */
 let timeline = [];
 
