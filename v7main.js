@@ -2,6 +2,8 @@ const repo_site = "https://101ta28.github.io/jpq7/";
 
 let qualtricsKeyInput = Qualtrics.SurveyEngine.getEmbeddedData('keyInput') || null;
 
+console.log("qualtricsKeyInput: ", qualtricsKeyInput);
+
 /* create timeline */
 let timeline = [];
 
